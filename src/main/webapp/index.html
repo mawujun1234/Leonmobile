@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<title>测试引导</title>
+<link rel="stylesheet" href="../src/leonmobile.css">
+
+</head>
+<body>
+<div id="pageHome" class="page out">
+	<ul>
+        <li><a href="#two" data-params="datatype=json">内部页面slide切换效果</a></li>
+        <li><a href="base-slide/index.html">基本slide切换效果</a></li>
+        <li><a href="inner-slide/index.html">内部局部过场</a></li>
+        <li><a href="ajax-html/index.html">ajax请求HTML</a></li>
+        <li><a href="ajax-json/index.html">ajax请求JSON并构建页面</a></li>
+        <li><a href="form-submit/index.html">表单提交<sup style="color:#cd0000;">New</sup></a></li>
+        <li><a href="prevent-default/index.html">Mobilebone默认行为的阻止与中断<sup style="color:#cd0000;">New</sup></a></li>
+        <li><a href="callback/index.html">回调方法测试</a></li>       
+        <li><a href="transition/index.html">其他类型的切换动画演示</a></li>
+        <li><a href="fixed-header-footer/index.html">固定的头部和底部</a></li>
+        <li><a href="modular-load/index.html">seajs等模块化加载演示</a></li>
+        <li><a href="backbone/index.html">backbone组合示例</a></li>
+        <li><a href="complex/index.html">微信综合实例</a></li>
+    </ul>
+</div>
+
+<div id="two" class="page out" data-callback="Page_two.aaa">
+	页面2
+	<a href="#pageHome" data-rel="back">返回</a>
+</div>
+
+<script src="./src/leonmobile.js"></script>
+<script>
+
+var Page_two={
+		aaa:function(){
+			alert(111);
+		}
+}
+function xxx_ajax_success(pageInto,pageOut,options){
+	//alert(22);
+	//console.log(options);
+	alert(options.target.getAttribute("data-params"));
+} 
+</script>
+</body>
+</html>
