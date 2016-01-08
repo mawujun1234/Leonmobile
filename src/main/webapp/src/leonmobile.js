@@ -157,13 +157,13 @@
 			    back:     boolean.    Direction of transition.          - Optional
 			    options:  object.     Cover or add parameters.           - Optional
 	 * @returns undefined
-	 * @example Leonmobile.transition(element);
-	            Leonmobile.transition(element1, element2);
-		        Leonmobile.transition(element1, element2, true);
-		        Leonmobile.transition(element1, element2, { id: "only" });
-		        Leonmobile.transition(element1, element2, true, { id: "only" });
+	 * @example Leonmobile.animation(element);
+	            Leonmobile.animation(element1, element2);
+		        Leonmobile.animation(element1, element2, true);
+		        Leonmobile.animation(element1, element2, { id: "only" });
+		        Leonmobile.animation(element1, element2, true, { id: "only" });
 	**/
-	Leonmobile.transition = function(pageInto, pageOut, back, options) {
+	Leonmobile.animation = function(pageInto, pageOut, back, options) {
 		if (arguments.length == 0 || pageInto == pageOut) return;
 		if (arguments.length == 3 && isNaN(back * 1) == true) {
 			options = back;
@@ -482,7 +482,7 @@
 			if (typeof callback == "function") callback.call(params_in.root, pageInto, pageOut, options);
 			
 			// Safari do 'popstate' after 'pushState/replaceState'
-			// So, we neet setTimeout to avoid excuting 'Leonmobile.transition()' twice
+			// So, we neet setTimeout to avoid excuting 'Leonmobile.animation()' twice
 			setTimeout(function() {
 				// reset to popable state
 				history.popstate = true;	
@@ -625,7 +625,7 @@
 		}
 		options = options || {};
 		
-		// 'options' that 'Leonmobile.transition()' needs
+		// 'options' that 'Leonmobile.animation()' needs
 		var optionsTransition = {};
 		
 		// get page-title from eleOrObj or options
@@ -754,7 +754,7 @@
 		create = null;
 
 		// do transition
-		this.transition(create_page, current_page, optionsTransition);
+		this.animation(create_page, current_page, optionsTransition);
 	};
 	
 	/**
@@ -1096,9 +1096,9 @@
 		var hash = location.hash.replace("#&", "#"), ele_in = null, container = null;
 		
 		if (hash == "" || hash == "#") {
-			this.transition(document.querySelector("." + this.classPage));
+			this.animation(document.querySelector("." + this.classPage));
 		} else if (isSimple.test(hash) == true && (ele_in = document.querySelector(hash)) && ele_in.classList.contains(this.classPage)) { // 'ele_in' must be a page element
-			this.transition(ele_in);	
+			this.animation(ele_in);	
 		} else {
 			// add on v2.6.1
 			if (hash.split("container=").length == 2) {
@@ -1111,7 +1111,7 @@
 				container: container,
 				error: function() {
 					ele_in = document.querySelector("." + Leonmobile.classPage);	
-					Leonmobile.transition(ele_in);
+					Leonmobile.animation(ele_in);
 				}
 			});	
 		}
@@ -1198,7 +1198,7 @@
 		
 		if (self_page == null || !target) return;
 
-		// optional params for Leonmobile.transition
+		// optional params for Leonmobile.animation
 		var options = {
 			target: target	
 		};
@@ -1274,7 +1274,7 @@
 			}
 			
 			if (eleTargetPage) {
-				Leonmobile.transition(eleTargetPage, self_page, back, options);
+				Leonmobile.animation(eleTargetPage, self_page, back, options);
 			}
 			event.preventDefault();
 		} else if (/^javascript/.test(href)) {
@@ -1299,7 +1299,7 @@
 				if (body.contains(store[clean_url]) == false) {
 					body.appendChild(store[clean_url]);
 				}
-				Leonmobile.transition(store[clean_url], self_page, back, options);
+				Leonmobile.animation(store[clean_url], self_page, back, options);
 			} else {
 				Leonmobile.ajax(target);
 			}
@@ -1386,7 +1386,7 @@
 
 			if (page_in && isSimple.test(hash) == false) {
 				// just transition
-				Leonmobile.transition(page_in, ((container || document).querySelector(".in." + Leonmobile.classPage)), true, {
+				Leonmobile.animation(page_in, ((container || document).querySelector(".in." + Leonmobile.classPage)), true, {
 					id: hash,  // fix issue #83
 					history: false,
 					container: container
@@ -1415,7 +1415,7 @@
 
 		// hash ↔ id													
 		if (page_in) {
-			Leonmobile.transition(page_in, page_out, Leonmobile.isBack(page_in, page_out), {
+			Leonmobile.animation(page_in, page_out, Leonmobile.isBack(page_in, page_out), {
 				id: hash,  // fix issue #83
 				history: false,
 				remove: false
