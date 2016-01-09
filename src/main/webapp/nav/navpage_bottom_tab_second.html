@@ -1,0 +1,108 @@
+
+<div id="navpage_bottom_tab" class="page out">
+
+	<style>
+		.nav_bottom_tab { height: 52px; border-top: 1px solid #dfdfdf; background-color: #fcfcfc; bottom: 0; z-index: 1;
+			left: 0;
+		    
+		    position: absolute;
+		    right: 0;
+		 }
+		.nav_bottom_tab > a { position:relative;text-decoration: none;height:51px;width: 33.333333333333%; 
+			text-align: center; color: #999; float: left; font-size: 14px; padding-top:8px; 
+			border-right:1px solid 	#c0c0c0;
+		}
+		.nav_bottom_tab > a > span { display: block; margin-bottom: 0px;  font-size: 22px;}
+		.nav_bottom_tab > .active { color: #45c018; color:#337ab7;}
+	
+		/*** 三角形设置 ***/
+		div.triangle-right {   
+			width:0px;   
+			height:0px;   
+			border-top:10px solid transparent;   
+			border-bottom: 10px solid transparent;   
+			border-left: 10px solid #c0c0c0;
+			position:absolute;
+			right:2px;
+			bottom:0px;
+			transform:rotate(45deg);
+		}	
+		
+		/**二级菜单样式***/
+		.nav_bottom_tab_ul {
+			list-style:none;
+			position:absolute;
+			margin:0 0 0 0;
+			padding:0 0 0 0;
+			width:100%;
+			top:-133px;
+			display:none;
+		}
+		.nav_bottom_tab_ul li{
+			border-top:solid 1px #c0c0c0;
+			border-right:solid 1px #c0c0c0;
+			border-bottom:solid 0px #c0c0c0;
+			border-left:solid 1px #c0c0c0; 
+			width:100%;
+			height:40px;
+			line-height:40px;
+		}
+		li:last-child {
+			border-top:solid 1px #c0c0c0;
+			border-right:solid 0px #c0c0c0;
+			border-bottom:solid 0px #c0c0c0;
+			border-left:solid 0px #c0c0c0; 
+			height:10px;
+		}
+		.nav_bottom_tab_ul div.triangle-bottom {   
+			width:0px;   
+			height:0px;   
+			border-left:10px solid transparent;   
+			border-right: 10px solid transparent;   
+			border-top: 10px solid #c0c0c0;
+			margin:0 auto;
+		}	
+	</style>
+
+
+
+	<a href="#navpage" data-rel="back">返回</a>
+	
+	<div class="content">
+		1：有二级菜单的导航，在右下角有一个灰色的三角形。
+	</div>
+	
+	<div class="nav_bottom_tab">
+		<a href="#navpage_bottom_tab" data-rel="auto" class="active">
+	    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>导航
+	    	
+	    </a>
+	    <a href="#navpage_bottom_tab" data-rel="auto">
+	    	<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>组件
+	    	<div class="triangle-right" ></div>
+	    	<ul class="nav_bottom_tab_ul">
+	    		<li>1</li>
+	    		<li>2</li>
+	    		<li>3</li>
+	    		<li><div class="triangle-bottom" ></div></li>
+	    	</ul>
+	    	
+	    </a>
+	    <a href="#navpage_bottom_tab" data-rel="auto">
+	    	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>实例
+	    	<div class="triangle-right" > </div>
+	    </a>
+	</div>
+
+</div>
+	<script>
+		(function(){
+		console.log( $("navpage_bottom_tab .nav_bottom_tab a").length);
+		    $("navpage_bottom_tab .nav_bottom_tab a").click(function(){alert(1);
+		       	 //$(".nav_bottom_tab a").removeClass("active");
+		       	 //$(this).addClass("active");
+		       	 console.log($(this).children(".nav_bottom_tab_ul"));
+		       	 $(this).children(".nav_bottom_tab_ul").show();
+		    });
+		})();
+	</script>

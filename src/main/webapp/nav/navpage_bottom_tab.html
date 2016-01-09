@@ -1,0 +1,125 @@
+
+<div id="navpage_bottom_tab" class="page out">
+	<script>
+	$(function(){
+	    $(".nav_bottom_tab a").click(function(){
+	       	 $(".nav_bottom_tab a").removeClass("active");
+	       	 $(this).addClass("active");
+	    });
+	});
+	</script>
+	<style>
+	.nav_bottom_tab { height: 52px; border-top: 1px solid #dfdfdf; background-color: #fcfcfc; bottom: 0; z-index: 1;
+		left: 0;
+	    
+	    position: absolute;
+	    right: 0;
+	 }
+	.nav_bottom_tab > a { position:relative;text-decoration: none;height:51px;width: 25%; text-align: center; color: #999; float: left; font-size: 14px; padding-top:8px; }
+	.nav_bottom_tab > a > span { display: block; margin-bottom: 0px;  font-size: 22px;}
+	.nav_bottom_tab > .active { color: #45c018; color:#337ab7;}
+	
+</style>
+<style>
+/**这里是红色圆角的配置***/
+	.nav_bottom_tab > a > span.badge{/**添加.nav_bottom_tab > a >的原因是因为前面的font-size:22px；优先级高**/
+	    color: #fff;
+	    background-color: #dd524d;
+	    position:absolute;
+	    top:5px;
+	    left:52%;/**让他定位在中间**/
+	    padding: 2px 2px;
+	    font-size: 12px;
+	 	min-width:18px;
+	    border-radius: 100px;
+	}
+	.badge_move {
+		animation-name: badge_move;
+		animation-duration: 4s;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-play-state: running;
+	}
+	@keyframes badge_move
+	{
+	0%   {top:5px;}
+	25%  {top:0px;}
+	50%  {top:5px;}
+	75%  {top:0px;}
+	100% {top:5px;}
+	}
+	.badge_hideshow {
+		animation-name: badge_hideshow;
+		animation-duration: 3s;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-play-state: running;
+	}
+	@keyframes badge_hideshow
+	{
+	0%   {opacity: 1; }
+	25%  {opacity: 0.5; }
+	50%  {opacity: 0; }
+	75%  {opacity: 0.5; }
+	100% {opacity: 1; }
+	}
+	span.badgedot{/**红色圆点提示**/
+	    color: #fff;
+	    background-color: #dd524d;
+	    position:absolute;
+	    top:5px;
+	    left:55%;/**让他定位在中间**/
+	    width: 8px;
+	    height 8px;
+	    line-height:8px;
+	    border-radius:50%;
+	}
+	.badgedot_scale {/**控制圆点的缩放**/
+		animation-name: badgedot_scale;
+		animation-duration: 1.5s;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-play-state: running;
+	}
+	@keyframes badgedot_scale {/**控制圆点的缩放**/
+	0%   {transform:scale(1,1); }
+	25%  {transform:scale(1.25,1.25); }
+	50%  {transform:scale(1.5,1.5); }
+	75%  {transform:scale(1.25,1.25); }
+	100% {transform:scale(1,1);}
+	}
+	 </style>
+ 
+	<a href="#navpage" data-rel="back">返回</a>
+	
+	<div class="content">
+		使用圆点的方式分两步:
+		1:添加&lt;pan class="badge"&gt;12&lt;/span&gt;</br>
+		2：如果要加上动画效果就加上 badge_hideshow或badge_move</br>
+		3：如果是没有数字的红点&lt;pan class="badgedot"&gt;12&lt;/span&gt;如果要动画效果就加上badgedot_scale</br>
+	</div>
+	
+	<div class="nav_bottom_tab">
+		<a href="#navpage_bottom_tab" data-rel="auto" class="active">
+	    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>导航
+	    	<span class="badge badge_hideshow">12</span>
+	    </a>
+	    <a href="#navpage_bottom_tab" data-rel="auto">
+	    	<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>组件
+	    	<span class="badge badge_move">12</span>
+	    </a>
+	    <a href="#navpage_bottom_tab" data-rel="auto">
+	    	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>实例
+	    	<span class="badgedot badgedot_scale">&nbsp;</span>
+	    </a>
+	    <a href="#navpage_bottom_tab" data-rel="auto">
+	    	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>其他
+	    </a>
+    </div>
+</div>
+

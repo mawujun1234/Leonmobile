@@ -1,8 +1,8 @@
 /*
- * leonmobile.js
- * by zhangxinxu(.com) 2014-09-26
- * https://github.com/zhangxinxu/leonmobile
- * bone of switch for mobile web app 
+ * Leonmobile.handleTapEvent() 是所有动画等事件处理的起点
+ *
+ * 
+ * 
 **/
 
 (function(root, factory) {
@@ -126,10 +126,10 @@
 	/**
 	 * Whether excute JavaScript when ajax HTML loaded
 	 * If this value is true, the script will excute.
-	 *
+	 * 当script通过html加载过来的时候，就立即执行
 	 * @type boolean
 	**/
-	Leonmobile.evalScript = false;
+	Leonmobile.evalScript = true;
 	
 	
 	if (// When running inside a FF iframe, calling replaceState causes an error. So set 'pushStateEnabled = false' 
@@ -281,6 +281,7 @@
 					return matchs.toUpperCase();
 				});
 				var animateEventName = isWebkit? webkitkey: animationkey;
+				
 				// if it's the out element, hide it when 'animationend'
 				if (index) {
 					page.addEventListener(animateEventName, function() {
@@ -349,7 +350,7 @@
 			}
 		}
 		
-		if (pageInto != null && pageInto.classList) {				
+		if (pageInto != null && pageInto.classList) {	
 			// for title change
 			var title = params_in.title, 
 			    header = document.querySelector("h1"), 
@@ -947,6 +948,7 @@
 					}
 				} else {
 					response = xhr.response;
+					
 					// 'response' is string
 					Leonmobile.createPage(response, aOrFormOrObj, params);
 				}
@@ -987,7 +989,8 @@
 	};
 	
 	Leonmobile.showLoading=function(){
-		var body = container || document.body;
+		//var body = container || document.body;
+		var body = document.body;
 		if (typeof attr_mask != "string") {
 			var ele_mask = body.querySelector("." + this.classMask);
 		}
@@ -1165,6 +1168,8 @@
 	
 	/**
 	 * If 'a' element has href, slide auto when tapping~
+	 * 点击的时候事件处理，这里是动画等效果的起点,
+	 * 当a点击的时候，自动进行切换，自动进行判切换的方向，如果在history中发现了这个地址，那就是back，就添加reverse样式
 	**/
 	Leonmobile.handleTapEvent = function(event) {
 		/**

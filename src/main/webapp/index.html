@@ -15,7 +15,7 @@
 <script src="./src/leonmobile.js"></script>
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="/resources/jquery-2.1.4.min.js"></script>
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -27,58 +27,66 @@
 <body>
 <div id="navpage" class="page out">
     <ul class="list-group">
-	  <li class="list-group-item"><a href="#navpage_bottom_tab">底部tab式导航</a></li>
+	  <li class="list-group-item"><a href="../nav/navpage_bottom_tab.html" >底部导航+红色数字提示</a></li>
+	  <li class="list-group-item"><a href="../nav/navpage_bottom_tab_second.html" >底部导航+二级导航</a></li>
+	  <li class="list-group-item"><a href="../nav/navpage_bottom_tab.html" >底部导航+菜单扩展</a></li>
 	  <li class="list-group-item">底部tab式导航的扩展形式</li>
 	  <li class="list-group-item">顶部tab式导航</li>
 	  <li class="list-group-item">Porta ac consectetur ac</li>
 	  <li class="list-group-item">Vestibulum at eros</li>
 	</ul>
     <!-- 参考http://www.lanrentuku.com/js/daohang-1095.html  做一个导航，这样就可以收缩在一边了，还可以节省空间，还可以把点击 弹出的导航引用进来 
-    http://www.yixieshi.com/it/23206.html
-    http://www.ui.cn/detail/13624.html
-    http://www.17sucai.com/pins/6868.html-->
-    底部导航如何共用
     
-    
-    <script>
-    $(function(){
-    	$(".navbar table a").click(function(){
-       	 $(".navbar table a").removeClass("active");
-       	 $(this).addClass("active");
-        });
-    });
-    </script>
-    <style>
-    	.navbar table a {
-    		display:block;
-    		text-decoration:none;
-    		color:#555;
-    		width:100%;
-    		height:50px;
-			padding-top:10px;   		
-    	}
-    	.navbar table a.active {
-    		color:#337ab7;
-    	}
-    	.navbar table a span {
-    		display:block;
-    	}
-    </style>
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-    	<table style="height:100%;width:100%;text-align:center;">
-    		<tr>
-    			<td><a href="#" class="active"><span class="glyphicon glyphicon-home" aria-hidden="true"></span><span>导航</span></a></td>
-    			<td><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><span>组件</span></a></td>
-    			<td><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><span>实例</span></a></td>
-    		</tr>
-    	</table>   
-    </nav>
+   
+         底部导航如何共用-->
 </div>
 
-<div id="navpage_bottom_tab" class="page out">
-	<a href="#navpage" data-rel="back">返回</a>
-	
+<div id="comppage" class="page out">
+	组件demo
 </div>
+<div id="demopage" class="page out">
+	综合案例
+</div>
+
+
+
+
+<!--- 底部导航 --->
+
+<style>
+.nav_bottom_tab { height: 52px; border-top: 1px solid #dfdfdf; background-color: #fcfcfc; bottom: 0; z-index: 1;
+	left: 0;
+    
+    position: absolute;
+    right: 0;
+ }
+.nav_bottom_tab > a { position:relative;text-decoration: none;height:51px;width: 33.333333333%; text-align: center; color: #999; float: left; font-size: 14px; padding-top:8px; }
+.nav_bottom_tab > a > span { display: block; margin-bottom: 0px;  font-size: 22px;}
+.nav_bottom_tab > .active { color: #45c018; color:#337ab7;}
+
+
+ </style>
+<div class="nav_bottom_tab" style="display:none;">
+	<a href="#navpage" data-rel="auto" class="active">
+    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>导航
+    </a>
+    <a href="#comppage" data-rel="auto">
+    	<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>组件
+    </a>
+    <a href="#demopage" data-rel="auto">
+    	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>实例
+    </a>
+</div>
+<script>
+$(function(){
+    $(".nav_bottom_tab a").click(function(){
+       	 $(".nav_bottom_tab a").removeClass("active");
+       	 $(this).addClass("active");
+    });
+});
+</script>
+<!--- 底部导航 --->
+
 
 <script>
 
