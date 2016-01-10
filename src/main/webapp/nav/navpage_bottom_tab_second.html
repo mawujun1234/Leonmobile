@@ -91,18 +91,22 @@
 	    <a href="#navpage_bottom_tab" data-rel="auto">
 	    	<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>实例
 	    	<div class="triangle-right" > </div>
+	    	<ul class="nav_bottom_tab_ul">
+	    		<li>4</li>
+	    		<li>5</li>
+	    		<li>6</li>
+	    		<li><div class="triangle-bottom" ></div></li>
+	    	</ul>
 	    </a>
 	</div>
 
 </div>
-	<script>
-		(function(){
-		console.log( $("navpage_bottom_tab .nav_bottom_tab a").length);
-		    $("navpage_bottom_tab .nav_bottom_tab a").click(function(){alert(1);
-		       	 //$(".nav_bottom_tab a").removeClass("active");
-		       	 //$(this).addClass("active");
-		       	 console.log($(this).children(".nav_bottom_tab_ul"));
-		       	 $(this).children(".nav_bottom_tab_ul").show();
-		    });
-		})();
-	</script>
+<script>
+	(function(){
+		$("#navpage_bottom_tab .nav_bottom_tab a").click(function(){
+		     //console.log($(this).children(".nav_bottom_tab_ul"));
+		     $("#navpage_bottom_tab .nav_bottom_tab .nav_bottom_tab_ul").hide();
+		     $(this).children(".nav_bottom_tab_ul").show();
+		});
+	})();
+</script>
