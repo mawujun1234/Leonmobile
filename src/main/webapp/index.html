@@ -20,16 +20,17 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" href="./nav/nav_bottom_tab.css">
 <style>
 
 </style>
 </head>
 <body>
-<div id="navpage" class="page out">
+<div id="navpage" class="page out" >
     <ul class="list-group">
 	  <li class="list-group-item"><a href="../nav/navpage_bottom_tab.html" >底部导航+红色数字提示</a></li>
 	  <li class="list-group-item"><a href="../nav/navpage_bottom_tab_second.html" >底部导航+二级导航</a></li>
-	  <li class="list-group-item"><a href="../nav/navpage_bottom_tab.html" >底部导航+菜单扩展</a></li>
+	  <li class="list-group-item"><a href="../nav/navpage_bottom_tab_ext.html" >底部导航+菜单扩展</a></li>
 	  <li class="list-group-item">底部tab式导航的扩展形式</li>
 	  <li class="list-group-item">顶部tab式导航</li>
 	  <li class="list-group-item">Porta ac consectetur ac</li>
@@ -54,19 +55,19 @@
 <!--- 底部导航 --->
 
 <style>
-.nav_bottom_tab { height: 52px; border-top: 1px solid #dfdfdf; background-color: #fcfcfc; bottom: 0; z-index: 1;
+#first_nav_bottom_tab { height: 52px; border-top: 1px solid #dfdfdf; background-color: #fcfcfc; bottom: 0; z-index: 1;
 	left: 0;
     
     position: absolute;
     right: 0;
  }
-.nav_bottom_tab > a { position:relative;text-decoration: none;height:51px;width: 33.333333333%; text-align: center; color: #999; float: left; font-size: 14px; padding-top:8px; }
-.nav_bottom_tab > a > span { display: block; margin-bottom: 0px;  font-size: 22px;}
-.nav_bottom_tab > .active { color: #45c018; color:#337ab7;}
+#first_nav_bottom_tab > a { position:relative;text-decoration: none;height:51px; float: left; width: 33.333333333%; text-align: center; color: #999;  font-size: 14px; padding-top:8px; }
+#first_nav_bottom_tab > a > span { display: block; margin-bottom: 0px;  font-size: 22px;}
+#first_nav_bottom_tab > .active { color: #45c018; color:#337ab7;}
 
 
  </style>
-<div class="nav_bottom_tab" style="display:none;">
+<div id="first_nav_bottom_tab" >
 	<a href="#navpage" data-rel="auto" class="active">
     	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>导航
     </a>
@@ -78,9 +79,10 @@
     </a>
 </div>
 <script>
+
 $(function(){
-    $(".nav_bottom_tab a").click(function(){
-       	 $(".nav_bottom_tab a").removeClass("active");
+    $("#first_nav_bottom_tab a").click(function(){
+       	 $("#first_nav_bottom_tab a").removeClass("active");
        	 $(this).addClass("active");
     });
 });

@@ -8,29 +8,69 @@
 	    //});
 	});
 	</script>
+	
+	<style>
+	.nav_bottom_tab>a {
+		position: relative;
+		text-decoration: none;
+		height: 51px;
+		width: 20%;
+		text-align: center;
+		color: #999;
+		float: left;
+		font-size: 14px;
+		padding-top: 8px;
+	}
+	
+	.nav_bottom_tab_plus {
+		position: relative;
+		display: block;
+		top:-20px;
+	
+		margin:0 auto;
+		text-align:center;
+		
+		border:solid 1px #c0c0c0; 
+		background-color:#337ab7;
+		color:#FFFF40;
+		height:40px;
+		width:40px;
+		border-radius:40px;
+		font-size:40px;
+		line-height:40px;
+	}
+	
+	</style>
 
 	<a href="#navpage" data-rel="back">返回</a>
 
 	<div class="content">
-		使用圆点的方式分两步: 1:添加&lt;pan class="badge"&gt;12&lt;/span&gt;</br>
-		2：如果要加上动画效果就加上 badge_hideshow或badge_move</br> 3：如果是没有数字的红点&lt;pan
-		class="badgedot"&gt;12&lt;/span&gt;如果要动画效果就加上badgedot_scale</br>
+		
 	</div>
 
 	<div class="nav_bottom_tab">
-		<a href="#navpage_bottom_tab" data-rel="auto" class="active"> <span
+		<a href="#" data-rel="auto" class="active"> <span
 			class="glyphicon glyphicon-home" aria-hidden="true"></span>导航 <span
 			class="badge badge_hideshow">12</span>
-		</a> <a href="#navpage_bottom_tab" data-rel="auto"> <span
+		</a> 
+		<a href="#" data-rel="auto"> <span
 			class="glyphicon glyphicon-th-large" aria-hidden="true"></span>组件 <span
 			class="badge badge_move">12</span>
-		</a> <a href="#navpage_bottom_tab" data-rel="auto"> <span
+		</a> 
+		<a href="#" data-rel="auto" > 
+			<div class="nav_bottom_tab_plus">
+				+
+			</div>
+		</a>
+		<a href="#" data-rel="auto"> <span
 			class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>实例 <span
 			class="badgedot badgedot_scale">&nbsp;</span>
-		</a> <a href="#navpage_bottom_tab" data-rel="auto"> <span
+		</a> <a href="#" data-rel="auto"> <span
 			class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>其他
 		</a>
+		
 	</div>
+	 
 </div>
 <!-- page out -->
 

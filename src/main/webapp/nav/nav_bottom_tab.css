@@ -1,0 +1,212 @@
+@CHARSET "UTF-8";
+
+.nav_bottom_tab {
+	height: 52px;
+	border-top: 1px solid #dfdfdf;
+	background-color: #fcfcfc;
+	bottom: 0;
+	z-index: 1;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.nav_bottom_tab>a {
+	position: relative;
+	text-decoration: none;
+	height: 51px;
+	width: 25%;
+	text-align: center;
+	color: #999;
+	float: left;
+	font-size: 14px;
+	padding-top: 8px;
+}
+
+.nav_bottom_tab>a>span {
+	display: block;
+	margin-bottom: 0px;
+	font-size: 22px;
+}
+
+.nav_bottom_tab>.active {
+	color: #45c018;
+	color: #337ab7;
+}
+
+
+/********************************************************这里是红色圆角的配置***/
+.nav_bottom_tab > a > span.badge {
+	/**添加.nav_bottom_tab > a >的原因是因为前面的font-size:22px；优先级高**/
+	color: #fff;
+	background-color: #dd524d;
+	position: absolute;
+	top: 5px;
+	left: 52%;
+	/**让他定位在中间**/
+	padding: 2px 2px;
+	font-size: 12px;
+	min-width: 18px;
+	border-radius: 100px;
+}
+
+.badge_move {
+	animation-name: badge_move;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+
+@keyframes badge_move {
+	0% {
+		top: 5px;
+	}
+
+	25% {
+		top: 0px;
+	}
+
+	50% {
+		top: 5px;
+	}
+
+	75% {
+		top: 0px;
+	}
+
+	100% {
+		top: 5px;
+	}
+}
+
+.badge_hideshow {
+	animation-name: badge_hideshow;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+
+@keyframes badge_hideshow {
+	0% {
+		opacity: 1;
+	}
+
+	25% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+span.badgedot {
+/**红色圆点提示**/
+	color: #fff;
+	background-color: #dd524d;
+	position: absolute;
+	top: 5px;
+	left: 55%;
+/**让他定位在中间**/
+	width: 8px;
+	height 8px;
+	    line-height: 8px;
+	border-radius: 50%;
+}
+
+.badgedot_scale {
+	/**控制圆点的缩放**/
+	animation-name: badgedot_scale;
+	animation-duration: 1.5s;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+
+@keyframes badgedot_scale {
+	/**控制圆点的缩放**/
+	0% {
+		transform: scale(1,1);
+	}
+
+	25% {
+		transform: scale(1.25,1.25);
+	}
+
+	50% {
+		transform: scale(1.5,1.5);
+	}
+
+	75% {
+		transform: scale(1.25,1.25);
+	}
+
+	100% {
+		transform: scale(1,1);
+	}
+}
+
+
+
+/***************************************************二级菜单样式***/
+/*** 右下角三角形设置 ***/
+		div.triangle-right {   
+			width:0px;   
+			height:0px;   
+			border-top:10px solid transparent;   
+			border-bottom: 10px solid transparent;   
+			border-left: 10px solid #c0c0c0;
+			position:absolute;
+			right:2px;
+			bottom:0px;
+			transform:rotate(45deg);
+		}	
+		
+		.nav_bottom_tab_ul {
+			list-style:none;
+			position:absolute;
+			margin:0 0 0 0;
+			padding:0 0 0 0;
+			width:100%;
+			top:-133px;
+			display:none;
+		}
+		.nav_bottom_tab_ul li{
+			border-top:solid 1px #c0c0c0;
+			border-right:solid 1px #c0c0c0;
+			border-bottom:solid 0px #c0c0c0;
+			border-left:solid 1px #c0c0c0; 
+			width:100%;
+			height:40px;
+			line-height:40px;
+		}
+		li:last-child {
+			border-top:solid 1px #c0c0c0;
+			border-right:solid 0px #c0c0c0;
+			border-bottom:solid 0px #c0c0c0;
+			border-left:solid 0px #c0c0c0; 
+			height:10px;
+		}
+		.nav_bottom_tab_ul div.triangle-bottom {   
+			width:0px;   
+			height:0px;   
+			border-left:10px solid transparent;   
+			border-right: 10px solid transparent;   
+			border-top: 10px solid #c0c0c0;
+			margin:0 auto;
+		}	
