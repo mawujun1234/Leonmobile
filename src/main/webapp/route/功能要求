@@ -1,2 +1,6 @@
 1：添加多几个事件，例如pagestart等等，可以参考sui和jqueyr mobile
 2:添加事件传递链，当前一个return false的时候，后面就不继续执行了。
+
+
+http://www.zhangxinxu.com/wordpress/2014/10/mobilebone-js-mobile-web-app-core/
+http://www.mobilebone.org/
